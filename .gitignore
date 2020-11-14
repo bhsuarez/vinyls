@@ -1,5 +1,5 @@
 *.DS_Store
 .idea/
 venv/
-main.py
 dbconnection.py
+albums.csv
