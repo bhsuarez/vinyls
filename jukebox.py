@@ -3,12 +3,10 @@ import dbconnection
 # Establishes database connection
 cursor = dbconnection.connect()
 
-# Prints the db connection
-print("Databoi CONNECTED " + "'" + str(cursor) + "'")
-
 #
 # MENU OPTIONS
 #
+print("Welcome to the Jukebox!")
 artist = input("Enter artist name: ")
 
 # SQL Query statement
