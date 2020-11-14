@@ -14,13 +14,16 @@ print("Databoi CONNECTED " + "'" + str(databoi) + "'")
 # Define album
 artist = "Kanye West"
 
-# Query
+# SQL Query statement
 query = ("SELECT * FROM albums "
          "WHERE artist_name = "+'"'+artist+'"'+";")
 
+# Executes the query
 cursor.execute(query)
 
-print(query)
+# Prints the albums that matches the artist
+for x in cursor:
+    print(x)
 
 # Closes the db connection
 cursor.close()
