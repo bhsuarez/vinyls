@@ -1,18 +1,15 @@
-import mysql.connector
+import dbconnection
 
-# Sets up the database connection
-databoi = mysql.connector.connect(host="localhost",
-                                  user="root",
-                                  passwd="rocky.123",
-                                  database="vinyls",
-                                  auth_plugin='mysql_native_password')
-cursor = databoi.cursor()
+# Establishes database connection
+cursor = dbconnection.connect()
 
 # Prints the db connection
-print("Databoi CONNECTED " + "'" + str(databoi) + "'")
+print("Databoi CONNECTED " + "'" + str(cursor) + "'")
 
-# Define album
-artist = "Kanye West"
+#
+# MENU OPTIONS
+#
+artist = input("Enter artist name: ")
 
 # SQL Query statement
 query = ("SELECT * FROM albums "
@@ -27,4 +24,3 @@ for x in cursor:
 
 # Closes the db connection
 cursor.close()
-databoi.close()
