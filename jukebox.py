@@ -17,7 +17,7 @@ while selection != 3:
 
     if selection == "1":
         discog_query = input("Which vinyl ya lookin' for mate?: ")
-        results = discogtool.search(discog_query)
+        results = discogtool.searchbarcode(discog_query)
         for x in results:
             print("============")
             print(x)

@@ -11,6 +11,12 @@ def search(query):
     return results
 
 
+#   Search by barcode
+def searchbarcode(query):
+    results = d.search(query, type='release', format='vinyl')
+    return results
+
+
 #   Searches by artist ID
 def searchartistid(artistid):
     results = d.artist(artistid)
