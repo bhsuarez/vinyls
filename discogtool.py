@@ -1,3 +1,4 @@
+# Importing discogs_client from https://github.com/joalla/discogs_client
 from discogs_client import Client
 
 d = Client('ZorroDiscogClient/0.1',

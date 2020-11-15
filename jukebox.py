@@ -10,9 +10,9 @@ cursor = dbconnection.connect()
 selection = 0
 while selection != 3:
     print("Welcome to the Jukebox!\n"
-          "1. search discogs\n"
-          "2. search personal vinyls by artist\n"
-          "0. exit")
+          "1. Search Discogs vinyls\n"
+          "2. Search personal vinyls by artist\n"
+          "3. Exit")
     selection = input("What ya wanna do?: ")
 
     if selection == "1":
