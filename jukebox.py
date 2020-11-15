@@ -1,24 +1,33 @@
 import dbconnection
+import discog
 
-# Establishes database connection
 cursor = dbconnection.connect()
 
 #
 # MENU OPTIONS
 #
-print("Welcome to the Jukebox!")
-artist = input("Enter artist name: ")
+print("Welcome to the Jukebox!\n"
+      "1. search discogs\n"
+      "2. search personal vinyls by artist\n")
+selection = input("What ya wanna do?: ")
 
-# SQL Query statement
-query = ("SELECT * FROM albums "
-         "WHERE artist_name = "+'"'+artist+'"'+";")
+if selection == "1":
+    discog_query = input("Search wut mate?: ")
+    discog.searching(discog_query)
 
-# Executes the query
-cursor.execute(query)
+elif selection == "2":
+    artist = input("Which artist ya lookin for mate?: ")
 
-# Prints the albums that matches the artist
-for x in cursor:
-    print(x)
+    # SQL Query statement
+    query = ("SELECT * FROM albums "
+             "WHERE artist_name = "+'"'+artist+'"'+";")
 
-# Closes the db connection
-cursor.close()
+    # Executes the query
+    cursor.execute(query)
+
+    # Prints the albums that matches the artist
+    for x in cursor:
+        print(x)
+
+    # Closes the db connection
+    cursor.close()
