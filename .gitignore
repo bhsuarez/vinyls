@@ -3,3 +3,4 @@
 venv/
 dbconnection.py
 albums.csv
+discogs_client/
