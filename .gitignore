@@ -4,3 +4,6 @@ venv/
 dbconnection.py
 albums.csv
 discogs_client/
+app/
+db/
+docker-compose.yml
