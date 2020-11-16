@@ -1,10 +1,9 @@
 from typing import List, Dict
-from flask import Flask
+from flask import Flask, render_template
 import mysql.connector
 import json
 
 app = Flask(__name__)
-
 
 def get_albums() -> List[Dict]:
     config = {
@@ -27,8 +26,8 @@ def get_albums() -> List[Dict]:
 
 
 @app.route('/')
-def index() -> str:
-    return "hello!"+json.dumps({"<h1>Vinyls</h1><br>"+'albums': get_albums()})
+def index():
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
