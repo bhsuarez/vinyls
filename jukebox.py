@@ -15,6 +15,7 @@ while selection != 3:
           "3. Exit")
     selection = input("What ya wanna do?: ")
 
+    #   Discogs search
     if selection == "1":
         discog_query = input("Which vinyl ya lookin' for mate?: ")
         results = discogtool.searchbarcode(discog_query)
@@ -23,6 +24,7 @@ while selection != 3:
             print(x)
             print("============")
 
+    #   Search vinyl collection
     elif selection == "2":
         artist = input("Which artist ya lookin for mate? (3 for exit): ")
 

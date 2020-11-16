@@ -28,7 +28,7 @@ def get_albums() -> List[Dict]:
 
 @app.route('/')
 def index() -> str:
-    return json.dumps({'albums': get_albums()})
+    return json.dumps({"<h1>Vinyls</h1><br>"+'albums': get_albums()})
 
 
 if __name__ == '__main__':
