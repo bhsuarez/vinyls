@@ -4,3 +4,4 @@ venv/
 dbconnection.py
 albums.csv
 discogs_client/
+__pycache__/
