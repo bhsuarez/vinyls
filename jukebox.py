@@ -1,8 +1,13 @@
-import dbconnection
+import postgresconnector
 import discogtool
 
-#   Set up database connection
-cursor = dbconnection.connect()
+
+def printseparator(y):
+    for x in y:
+        print("============")
+        print(x)
+        print("============")
+
 
 #
 # MAIN MENU OPTIONS
@@ -19,30 +24,31 @@ while selection != 3:
     if selection == "1":
         discog_query = input("Which vinyl ya lookin' for mate?: ")
         results = discogtool.searchbarcode(discog_query)
-        for x in results:
-            print("============")
-            print(x)
-            print("============")
+        printseparator(results)
 
     #   Search vinyl collection
     elif selection == "2":
-        artist = input("Which artist ya lookin for mate? (3 for exit): ")
+        artist = input('Which artist ya lookin for mate? (3 for exit): ')
 
-        if artist == "3":
+        if artist == "3" or artist is None:
             break
+
+        #   Set up database connection
+        cursor = postgresconnector.connect()
 
         # SQL Query statement
         query = ("SELECT * FROM albums "
-                 "WHERE artist_name = " + '"' + artist + '"' + ";")
+                 "WHERE artist_name = " +
+                 "'" +
+                 artist
+                 + "'")
 
         # Executes the query
         cursor.execute(query)
 
         # Prints the albums that matches the artist
-        for x in cursor:
-            print("\n============")
-            print(x)
-            print("============\n")
+        printseparator(cursor)
+
     elif selection == "3":
         break
 

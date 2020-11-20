@@ -8,10 +8,10 @@ services:
       - "5000:5000"
 
   db:
-    image: mysql:5.7
-    ports:
-      - "32000:3306"
+    image: postgres
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      host: 0.0.0.0
+      ports: 32000:5432
+      POSTGRES_PASSWORD: root
     volumes:
-      - ./db:/docker-entrypoint-initdb.d/:ro
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
