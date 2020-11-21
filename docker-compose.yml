@@ -10,8 +10,16 @@ services:
   db:
     image: postgres
     environment:
-      host: 0.0.0.0
-      ports: 32000:5432
+      POSTGRES_USER: root
       POSTGRES_PASSWORD: root
+      POSTGRES_DB: vinyls
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db:/docker-entrypoint-initdb.d/:ro
+    ports:
+      - "5432:5432"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
