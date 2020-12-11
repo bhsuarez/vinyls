@@ -1,9 +1,9 @@
 import psycopg2
 
 #   Sets up the database connection
-databoi = psycopg2.connect(dbname="vinyls",
-                           user="root",
-                           password="root",
+databoi = psycopg2.connect(dbname="postgres",
+                           user="bhsuarez",
+                           password="",
                            host="localhost")
 
 
