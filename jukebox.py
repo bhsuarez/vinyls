@@ -2,7 +2,7 @@ import postgresconnector
 import discogtool
 
 
-def printseparator(y):
+def print_separator(y):
     for x in y:
         print("============")
         print(x)
@@ -47,7 +47,7 @@ while selection != 3:
         cursor.execute(query)
 
         # Prints the albums that matches the artist
-        printseparator(cursor)
+        print_separator(cursor)
 
     elif selection == "3":
         break
