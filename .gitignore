@@ -1,6 +1,4 @@
 *.DS_Store
-/app/
-/db/
 .idea/
 venv/
 dbconnection.py

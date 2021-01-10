@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">artist_name</th>
+	  <th scope="col">artist_id</th>
+	  <th scope="col">discogs_id</th>
+	  <th scope="col">barcode</th>
+    </tr>
+  </thead>
+	{% for album in albums %}
+	<tr>
+	<th scope="row">{{album.id}}</th>
+	<td>{{album.id}}
+	</td>
+	<td>{{album.title}}
+	</td>
+	<td>{{album.artist_name}}
+	</td>
+	<td>{{album.artist_id}}
+	</td>
+	<td>{{album.discogs_id}}
+	</td>
+	<td>{{album.barcode}}
+	</td>
+	</tr>
+	{% endfor %}
+</table>
+
+
+</body>
+</html>
