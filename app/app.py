@@ -20,7 +20,7 @@ def index():
 
 @app.route('/albumlist', methods=['GET'])
 def album_list():
-    albums = db.execute("SELECT * FROM public.albums")
+    albums = db.execute("SELECT * FROM public.albums ")
     return render_template("albumlist.html", albums=albums)
 
 
