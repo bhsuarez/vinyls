@@ -135,7 +135,7 @@
                     {% for album in albums %}
                     <tr>
                         <th scope="row">{{album.album_id}}</th>
-                        <td><a href="">{{album.title}}</a>
+                        <td><a href="/albumview/{{album.album_id}}">{{album.title}}</a>
                         </td>
                         <td>{{album.artist_name}}
                         </td>

@@ -25,5 +25,11 @@ def album_list():
     return render_template("albumlist.html", albums=albums)
 
 
+@app.route('/albumview/<album_id>', methods=['GET'])
+def album_view(album_id):
+    albums = db.execute("SELECT * FROM public.albums WHERE album_id = "+album_id)
+    return render_template("albumview.html", albums=albums)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
