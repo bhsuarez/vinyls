@@ -33,6 +33,7 @@
 
 
 
+
     </style>
     <!-- Custom styles for this template -->
     <link href="../static/styles/album.css" rel="stylesheet">
@@ -91,41 +92,41 @@
         </div>
     </section>
     <section>
-    <div class="container-md themed-container">
-        <nav class="navbar navbar-light bg-light justify-content-between">
-            <a class="navbar-brand">Search for a vinyl</a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </nav>
-        <div class="table-responsive">
-        <table class="table table-hover">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">album_id</th>
-                <th scope="col">title</th>
-                <th scope="col">artist</th>
-                <th scope="col">discogs_id</th>
-                <th scope="col">barcode</th>
-            </tr>
-            </thead>
-            {% for album in albums %}
-            <tr>
-                <th scope="row">{{album.album_id}}</th>
-                <td><a href="">{{album.title}}</a>
-                </td>
-                <td>{{album.artist_name}}
-                </td>
-                <td>{{album.discogs_id}}
-                </td>
-                <td>{{album.barcode}}
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
+        <div class="container-md themed-container">
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <a class="navbar-brand">Search for a vinyl</a>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Artist</th>
+                        <!--                <th scope="col">discogs_id</th>-->
+                        <!--                <th scope="col">barcode</th>-->
+                    </tr>
+                    </thead>
+                    {% for album in albums %}
+                    <tr>
+                        <th scope="row">{{album.album_id}}</th>
+                        <td><a href="">{{album.title}}</a>
+                        </td>
+                        <td>{{album.artist_name}}
+                        </td>
+                        <!--                <td>{{album.discogs_id}}-->
+                        <!--                </td>-->
+                        <!--                <td>{{album.barcode}}-->
+                        <!--                </td>-->
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
-    </div>
     </section>
 
 
