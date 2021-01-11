@@ -15,7 +15,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    albums = db.execute("SELECT * FROM public.albums ")
+    return render_template('index.html', albums=albums)
 
 
 @app.route('/albumlist', methods=['GET'])
