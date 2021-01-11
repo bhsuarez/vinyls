@@ -9,9 +9,8 @@
 <table class="table" border="1">
   <thead>
     <tr>
-      <th scope="col">albumid</th>
+      <th scope="col">album_id</th>
       <th scope="col">title</th>
-      <th scope="col">artist_name</th>
 	  <th scope="col">artist_id</th>
 	  <th scope="col">discogs_id</th>
 	  <th scope="col">barcode</th>
@@ -19,9 +18,7 @@
   </thead>
 	{% for album in albums %}
 	<tr>
-	<th scope="row">{{album.albumid}}</th>
-	<td>{{album.albumid}}
-	</td>
+	<th scope="row">{{album.album_id}}</th>
 	<td>{{album.title}}
 	</td>
 	<td>{{album.artist_name}}

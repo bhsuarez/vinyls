@@ -5,4 +5,4 @@ dbconnection.py
 albums.csv
 discogs_client/
 __pycache__/
-postgresconnector.py
+jukebox/postgresconnector.py
