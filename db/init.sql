@@ -6,6 +6,14 @@ CREATE TABLE public.albums (
 	discogs_id int4 NULL,
 	barcode varchar(1024) NULL
 );
+
+CREATE TABLE public.artists (
+    artist_id int4 NULL,
+    artist_name varchar(1024) NULL,
+    artist_discogs_id int4 NULL,
+    artist_photo_url varchar(1024) NULL
+);
+
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
 	 (1,'Long Live A.S.A.P.','A.S.A.P. Rocky',1,NULL,''),
 	 (2,'Moon Safari','Air',2,NULL,''),
