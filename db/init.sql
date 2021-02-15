@@ -239,4 +239,7 @@ INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barco
 	 (202,'It Is What It Is','Thundercat',137,15035550,''),
 	 (203,'Plastic Beach','Gorillaz',138,5813899,''),
 	 (204,'The Lion King: The Gift','Beyonce',11,15885116,''),
-	 (205,'The Miseducation of Lauryn Hill','Lauryn Hill',139,6546645,'888750215710');
+	 (205,'The Miseducation of Lauryn Hill','Lauryn Hill',139,6546645,'888750215710'),
+	 (206, 'After Hours','The Weeknd',93,15968171,''),
+	 (207, 'Good Thing','Leon Bridges',140,NULL,190758399423),
+	 (208, 'Astroworld','Travis Scott', 98,NULL,'');
