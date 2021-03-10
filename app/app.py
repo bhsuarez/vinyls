@@ -31,5 +31,11 @@ def album_view(album_id):
     return render_template("albumview.html", albums=albums)
 
 
+@app.route('/albumview2/<album_id>', methods=['GET'])
+def album_view2(album_id):
+    albums = db.execute("SELECT * FROM public.albums WHERE album_id = "+album_id)
+    return render_template("albumview2.html", albums=albums, title=title)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
