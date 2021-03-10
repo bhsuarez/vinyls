@@ -50,18 +50,19 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    {% endblock %}
-
-    <title>Vinyl Collection</title>
-    {% endblock %}
+    {% endblock styles%}
+    {% block title %}
+    <title>{{title}} - Album detail</title>
+    {% endblock title%}
+    {% endblock head%}
 </head>
 <body>
 <!-- Your page content -->
@@ -100,27 +101,15 @@
     </div>
 </header>
 <main role="main">
-
+  {% for album in albums %}
     <section class="jumbotron text-center">
         <div class="container-md themed-container">
-            <h1>Vinyl Collection</h1>
-            <p class="lead text-muted">Below is a list of our vinyls that we have collected over the years</p>
-            <p>
-                <!--        <a href="/albumlist" class="btn btn-primary my-2">Album List</a>-->
-                <!--        <a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
-            </p>
-
+            <h1>{{album.title}}</h1>
+            <h2>{{album.artist_name}}</h2>
         </div>
     </section>
     <section>
         <div class="container-md themed-container">
-            <nav class="navbar navbar-light bg-light justify-content-between">
-                <a class="navbar-brand">Search for a vinyl</a>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead class="thead-dark">
@@ -132,7 +121,7 @@
                         <!--                <th scope="col">barcode</th>-->
                     </tr>
                     </thead>
-                    {% for album in albums %}
+
                     <tr>
                         <th scope="row">{{album.album_id}}</th>
                         <td><a href="/albumview/{{album.album_id}}">{{album.title}}</a>
@@ -153,17 +142,9 @@
 
 </main>
 
-<footer class="text-muted">
-    <div class="container">
-        <p class="float-right">
-            <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a
-                href="../getting-started/introduction/">getting started guide</a>.</p>
-    </div>
+<footer>
 </footer>
-{% endblock %}
+{% endblock content %}
 
 {% block scripts %}
 <!-- Optional JavaScript -->
@@ -172,6 +153,6 @@
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
 <script src="../static/bootstrap.bundle.min.js"></script>
-{% endblock %}
+{% endblock scripts %}
 </body>
 </html>
