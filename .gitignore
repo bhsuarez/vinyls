@@ -5,5 +5,4 @@ dbconnection.py
 albums.csv
 discogs_client/
 __pycache__/
-postgresconnector.py
-discogtool.py
+credsz.py
