@@ -29,6 +29,18 @@ def album_list():
 def album_view(album_id):
     albums = db.execute("SELECT * FROM public.albums WHERE album_id = "+album_id)
     return render_template("albumview.html", albums=albums)
+
+
+@app.route('/discogs', methods=['GET'])
+def discog_list():
+    albums = db.execute("SELECT * FROM public.albums ")
+    return render_template("discogs.html", albums=albums)
+
+
+@app.route('/dashboard', methods=['GET'])
+def show_dashboard():
+    albums = db.execute("SELECT * FROM public.albums ")
+    return render_template("dashboard.html", albums=albums)
     
 
 if __name__ == '__main__':

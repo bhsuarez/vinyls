@@ -7,7 +7,7 @@ def main():
     discog_query = "Kanye West"
     discog_results = discogtool.searchbarcode(discog_query)
 
-    print(discog_results)
+    print(discog_results.__dict__)
 
     #   Set up database connection
     cursor = postgresconnector.connect()
