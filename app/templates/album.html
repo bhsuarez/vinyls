@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Brian and Natalie's Vinyls</title>
+    <title>Dashboard Template · Bootstrap</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
 
@@ -36,7 +36,7 @@
 </head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Brian and Natalie's Vinyls</a>
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Brian and Natalie</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
             data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,9 +55,9 @@
             <div class="sidebar-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">
+                        <a class="nav-link" href="/">
                             <span data-feather="disc"></span>
-                            Albums <span class="sr-only">(current)</span>
+                            Albums
                         </a>
                     </li>
                     <li class="nav-item">
@@ -120,47 +120,55 @@
                 </ul>
             </div>
         </nav>
-
+        {% for album in albums %}
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Vinyls</h1>
-                <p>These are the vinyls that we have collected over the years. This is a work in progress and over time this website </p>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Add vinyl</button>
-                    </div>
-                </div>
-            </div>
-
+<!--            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">-->
+<!--                <div class="btn-toolbar mb-2 mb-md-0">-->
+<!--                    <div class="btn-group mr-2">-->
+<!--                        -->
+<!--                        <button type="button" class="btn btn-sm btn-outline-secondary">Add vinyl</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <!--      This is a really cool graph, should look into using it at some point-->
             <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
 
-            <h2>Albums</h2>
-            <div class="table-responsive table-hover">
+<!--            <h2>Vinyls</h2>-->
+            <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
-                    <tr>
-                        <th scope="col">Album ID</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Artist</th>
-<!--                        <th scope="col">Artist ID</th>-->
-<!--                        <th scope="col">Discogs ID</th>-->
-<!--                        <th scope="col">Barcode</th>-->
-                    </tr>
+                    Photo goes here
                     </thead>
-                    {% for album in albums %}
+
                     <tr>
-                        <th scope="row">{{album.album_id}}</th>
-                        <td><a href="/album/{{album.album_id}}">{{album.title}}</a>
+                        <th scope="row">Album ID</th>
+                        <td>{{album.album_id}}
                         </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Title</th>
+                        <td>{{album.title}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Artist</th>
                         <td>{{album.artist_name}}
                         </td>
-<!--                        <td>{{album.artist_id}}-->
-<!--                        </td>-->
-<!--                        <td>{{album.discogs_id}}-->
-<!--                        </td>-->
-<!--                        <td>{{album.barcode}}-->
-<!--                        </td>-->
+                    </tr>
+                    <tr>
+                        <th scope="row">Artist ID</th>
+                        <td>{{album.artist_id}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Discogs ID</th>
+                        <td>{{album.discogs_id}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Barcode</th>
+                        <td>{{album.barcode}}
+                        </td>
                     </tr>
                     {% endfor %}
                 </table>

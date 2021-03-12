@@ -5,7 +5,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 engine = create_engine("postgresql://root:root@db:5432/vinyls")
 db = scoped_session(sessionmaker(bind=engine))
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='/static')
 
 app.secret_key = '12345678' # this key is used to communicate with database.
 #   Configure session to use filesystem
@@ -19,28 +19,22 @@ def index():
     return render_template('index.html', albums=albums)
 
 
-@app.route('/albumlist', methods=['GET'])
-def album_list():
-    albums = db.execute("SELECT * FROM public.albums ")
-    return render_template("albumlist.html", albums=albums)
-
-
-@app.route('/albumview/<album_id>', methods=['GET'])
+@app.route('/album/<album_id>', methods=['GET'])
 def album_view(album_id):
     albums = db.execute("SELECT * FROM public.albums WHERE album_id = "+album_id)
-    return render_template("albumview.html", albums=albums)
+    return render_template("album.html", albums=albums)
+
+
+@app.route('/artist/<artist_id>', methods=['GET'])
+def artist_view(artist_id):
+    artist = db.execute("SELECT * FROM public.albums WHERE album_id = "+artist_id)
+    return render_template("artist.html", artist=artist)
 
 
 @app.route('/discogs', methods=['GET'])
 def discog_list():
     albums = db.execute("SELECT * FROM public.albums ")
     return render_template("discogs.html", albums=albums)
-
-
-@app.route('/dashboard', methods=['GET'])
-def show_dashboard():
-    albums = db.execute("SELECT * FROM public.albums ")
-    return render_template("index.html", albums=albums)
     
 
 if __name__ == '__main__':
