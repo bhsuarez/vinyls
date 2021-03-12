@@ -5,7 +5,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 engine = create_engine("postgresql://root:root@db:5432/vinyls")
 db = scoped_session(sessionmaker(bind=engine))
 
-app = Flask(__name__, static_folder='/static')
+app = Flask(__name__, static_folder='/app/static')
 
 app.secret_key = '12345678' # this key is used to communicate with database.
 #   Configure session to use filesystem
