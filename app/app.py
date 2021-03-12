@@ -35,7 +35,7 @@ def artist_view(artist_id):
 def discog_list():
     albums = db.execute("SELECT * FROM public.albums ")
     return render_template("discogs.html", albums=albums)
-    
+
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=80)
