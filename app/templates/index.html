@@ -1,177 +1,179 @@
 <!doctype html>
 <html lang="en">
 <head>
-    {% block head %}
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
+    <title>Dashboard Template · Bootstrap</title>
 
-    {% block styles %}
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
     <link href="../static/styles/bootstrap.min.css" rel="stylesheet">
 
     <style>
-          .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-          }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-          @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-              font-size: 3.5rem;
-            }
-          }
-
-
-
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 
 
     </style>
     <!-- Custom styles for this template -->
-    <link href="../static/styles/album.css" rel="stylesheet">
-
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    {% endblock %}
-
-    <title>Vinyl Collection</title>
-    {% endblock %}
+    <link href="../static/styles/dashboard.css" rel="stylesheet">
 </head>
 <body>
-<!-- Your page content -->
-{% block content %}
-<header>
-    <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">About</h4>
-                    <p class="text-muted">As our collection grew, Natalie and I thought it would be a good idea to keep
-                        a database of all the vinyls we have collected over the years. It's just a simple project right
-                        now
-                        but maybe we can host it online and share it with others one day.
-                    </p>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Brian and Natalie</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+            data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+<!--            <a class="nav-link" href="#">Sign out</a>-->
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">
+                            <span data-feather="disc"></span>
+                            Albums <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="user"></span>
+                            Artists
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="music"></span>
+                            Discogs
+                        </a>
+                    </li>
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span data-feather="bar-chart-2"></span>-->
+<!--                            Reports-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span data-feather="layers"></span>-->
+<!--                            Integrations-->
+<!--                        </a>-->
+<!--                    </li>-->
+                </ul>
+
+<!--                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">-->
+<!--                    <span>Saved reports</span>-->
+<!--                    <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">-->
+<!--                        <span data-feather="plus-circle"></span>-->
+<!--                    </a>-->
+<!--                </h6>-->
+<!--                <ul class="nav flex-column mb-2">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span data-feather="file-text"></span>-->
+<!--                            Current month-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span data-feather="file-text"></span>-->
+<!--                            Last quarter-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span data-feather="file-text"></span>-->
+<!--                            Social engagement-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span data-feather="file-text"></span>-->
+<!--                            Year-end sale-->
+<!--                        </a>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Dashboard</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Add vinyl</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-music-note-beamed" fill="currentColor"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"/>
-                    <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z"/>
-                    <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"/>
-                </svg>
-                <strong>Vinyls</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
-</header>
-<main role="main">
 
-    <section class="jumbotron text-center">
-        <div class="container-md themed-container">
-            <h1>Vinyl Collection</h1>
-            <p class="lead text-muted">Below is a list of our vinyls that we have collected over the years</p>
-            <p>
-                <!--        <a href="/albumlist" class="btn btn-primary my-2">Album List</a>-->
-                <!--        <a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
-            </p>
+            <!--      This is a really cool graph, should look into using it at some point-->
+            <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
 
-        </div>
-    </section>
-    <section>
-        <div class="container-md themed-container">
-            <nav class="navbar navbar-light bg-light justify-content-between">
-                <a class="navbar-brand">Search for a vinyl</a>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
+            <h2>Vinyls</h2>
             <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead class="thead-dark">
+                <table class="table table-striped table-sm">
+                    <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Artist</th>
-                        <!--                <th scope="col">discogs_id</th>-->
-                        <!--                <th scope="col">barcode</th>-->
+                        <th scope="col">album_id</th>
+                        <th scope="col">title</th>
+                        <th scope="col">artist</th>
+                        <th scope="col">artist_id</th>
+                        <th scope="col">discogs_id</th>
+                        <th scope="col">barcode</th>
                     </tr>
                     </thead>
                     {% for album in albums %}
                     <tr>
                         <th scope="row">{{album.album_id}}</th>
-                        <td><a href="/albumview/{{album.album_id}}">{{album.title}}</a>
+                        <td>{{album.title}}
                         </td>
                         <td>{{album.artist_name}}
                         </td>
-                        <!--                <td>{{album.discogs_id}}-->
-                        <!--                </td>-->
-                        <!--                <td>{{album.barcode}}-->
-                        <!--                </td>-->
+                        <td>{{album.artist_id}}
+                        </td>
+                        <td>{{album.discogs_id}}
+                        </td>
+                        <td>{{album.barcode}}
+                        </td>
                     </tr>
                     {% endfor %}
                 </table>
             </div>
-        </div>
-    </section>
-
-
-</main>
-
-<footer class="text-muted">
-    <div class="container">
-        <p class="float-right">
-            <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a
-                href="../getting-started/introduction/">getting started guide</a>.</p>
+        </main>
     </div>
-</footer>
-{% endblock %}
-
-{% block scripts %}
-<!-- Optional JavaScript -->
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
 <script src="../static/bootstrap.bundle.min.js"></script>
-{% endblock %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="../static/dashboard.js"></script>
 </body>
 </html>

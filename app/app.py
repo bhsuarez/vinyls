@@ -40,7 +40,7 @@ def discog_list():
 @app.route('/dashboard', methods=['GET'])
 def show_dashboard():
     albums = db.execute("SELECT * FROM public.albums ")
-    return render_template("dashboard.html", albums=albums)
+    return render_template("index.html", albums=albums)
     
 
 if __name__ == '__main__':
