@@ -1,8 +1,8 @@
 # Importing discogs_client from https://github.com/joalla/discogs_client
 from discogs_client import Client
-import credsz
 
-d = Client(credsz.discog)
+d = Client('ZorroDiscogClient/0.1', user_token='pKyILjZnXBGRToDMAcXdcGDpPtMTgNyzqRSVBBJO')
+
 
 #   General search query
 def search(query):

@@ -7,7 +7,11 @@ WORKDIR /app
 COPY requirements.txt /app
 COPY /templates /app/templates
 COPY /static /app/static
+COPY discogs_client /app/discogclient
+COPY discogtool.py /app
+COPY jukebox.py /app
+COPY postgresconnector.py /app
 RUN pip install -r requirements.txt
 
-COPY app.py /app
-CMD python app.py
+
+CMD python jukebox.py
