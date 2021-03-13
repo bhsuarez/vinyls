@@ -36,7 +36,7 @@
 </head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Brian and Natalie's Vinyls</a>
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Collection</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
             data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -123,16 +123,16 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Vinyls</h1>
-                <p>These are the vinyls that we have collected over the years. This is a work in progress and over time this website will have more information
-                about this collection. You can click on each individual vinyl to see details.</p>
+                <h1 class="h2">Vinyls</h1><br>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Add vinyl</button>
                     </div>
                 </div>
             </div>
-
+            <div><p>This is a work in progress and over time this website will have more information
+            about this collection. You can click on each individual vinyl to see details.</p>
+           </div>
             <!--      This is a really cool graph, should look into using it at some point-->
             <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
 
@@ -154,7 +154,7 @@
                         <th scope="row">{{album.album_id}}</th>
                         <td><a href="/album/{{album.album_id}}">{{album.title}}</a>
                         </td>
-                        <td>{{album.artist_name}}
+                        <td><a href="/artist/{{album.artist_id}}">{{album.artist_name}}
                         </td>
 <!--                        <td>{{album.artist_id}}-->
 <!--                        </td>-->
@@ -184,8 +184,17 @@
           // Loop through all table rows, and hide those who don't match the search query
           for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
+            td2 = tr[i].getElementsByTagName("td")[1];
             if (td) {
               txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+            if (td2) {
+              txtValue = td2.textContent || td2.innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
               } else {
