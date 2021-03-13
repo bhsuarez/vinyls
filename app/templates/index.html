@@ -126,13 +126,38 @@
                 <h1 class="h2">Vinyls</h1><br>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Add vinyl</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary accordion" data-toggle="collapse" data-target="#addVinyl" aria-expanded="false" aria-controls="addVinyl">Add vinyl</button>
                     </div>
                 </div>
             </div>
             <div><p>This is a work in progress and over time this website will have more information
             about this collection. You can click on each individual vinyl to see details.</p>
            </div>
+
+           <div class="panel collapsed collapse" id="addVinyl">
+           <form class="needs-validation" novalidate>
+             <div class="row g-3">
+               <div class="col-sm-6">
+                 <label for="firstName" class="form-label">Album Title</label>
+                 <input type="text" class="form-control" id="albumTitle" placeholder="" value="" required>
+                 <div class="invalid-feedback">
+                   Valid album title is required.
+                 </div>
+               </div>
+
+               <div class="col-sm-6">
+                 <label for="lastName" class="form-label">Album Artist</label>
+                 <input type="text" class="form-control" id="albumArtist" placeholder="" value="" required>
+                 <div class="invalid-feedback">
+                   Valid album artist is required.
+                 </div>
+               </div>
+             </div>
+           </div>
+
+
+           </form>
+
             <!--      This is a really cool graph, should look into using it at some point-->
             <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
 
@@ -154,7 +179,7 @@
                         <th scope="row">{{album.album_id}}</th>
                         <td><a href="/album/{{album.album_id}}">{{album.title}}</a>
                         </td>
-                        <td><a href="/artist/{{album.artist_id}}">{{album.artist_name}}
+                        <td>{{album.artist_name}}
                         </td>
 <!--                        <td>{{album.artist_id}}-->
 <!--                        </td>-->
@@ -202,6 +227,23 @@
               }
             }
           }
+        }
+        </script>
+
+        <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
         }
         </script>
 <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
