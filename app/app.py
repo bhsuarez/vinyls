@@ -27,8 +27,8 @@ def album_view(album_id):
 
 @app.route('/artist/<artist_id>', methods=['GET'])
 def artist_view(artist_id):
-    artist = db.execute("SELECT * FROM public.albums WHERE album_id = "+artist_id)
-    return render_template("artist.html", artist=artist)
+    artists = db.execute("SELECT * FROM public.artists WHERE artist_id = "+artist_id)
+    return render_template("artist.html", artists=artists)
 
 
 @app.route('/discogs', methods=['GET'])
