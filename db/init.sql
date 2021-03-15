@@ -7,13 +7,6 @@ CREATE TABLE public.albums (
 	barcode varchar(1024) NULL
 );
 
-CREATE TABLE public.artists (
-    artist_id int4 NULL,
-    artist_name varchar(1024) NULL,
-    artist_discogs_id int4 NULL,
-    artist_photo_url varchar(1024) NULL
-);
-
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
 	 (1,'Long Live A.S.A.P.','A.S.A.P. Rocky',1,NULL,''),
 	 (2,'Moon Safari','Air',2,NULL,''),
@@ -244,3 +237,149 @@ INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barco
 	 (207, 'Good Thing','Leon Bridges',140,NULL,190758399423),
 	 (208, 'Astroworld','Travis Scott',98,NULL,''),
 	 (209, '3.15.20','Childish Gambino',118,16059829,'');
+
+	 CREATE TABLE public.artists(
+	    artist_id         INTEGER  NOT NULL PRIMARY KEY
+	   ,name       VARCHAR(31) NOT NULL
+	   ,discogs_id VARCHAR(30)
+	   ,photo_url  VARCHAR(30)
+	 );
+
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (1,'A.S.A.P. Rocky',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (2,'Air',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (3,'Alt-J (∆)',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (4,'American Football',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (5,'Andrew Bird',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (6,'Animal Collective',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (7,'Arcade Fire',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (8,'Atlas Sound',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (9,'Band Of Horses',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (10,'Beach House',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (11,'Beyonce',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (12,'Billy Holiday',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (13,'Bob Dylan',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (14,'Bob Marley & The Wailers',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (15,'Bon Iver',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (16,'Broken Social Scene',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (17,'Charles Manson',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (18,'Coldplay',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (19,'Cole Alexander & Bradford Cox',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (20,'Common',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (21,'Crosby, Stills, Nash, and Young',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (22,'Daniel Rossen',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (23,'Danny Brown',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (24,'David Bowie',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (25,'Death',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (26,'Death Cab For Cutie',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (27,'Deerhunter',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (28,'Devendra Bandhart',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (29,'Drake',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (30,'Drake & Future',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (31,'Duke Ellington',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (32,'Dum Dum Girls',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (33,'Easy Star All Stars',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (34,'Elliot Smith',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (35,'Elton John',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (36,'Elvis Presley',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (37,'Fleet Foxes',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (38,'Fleetwood Mac',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (39,'Foxygen',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (40,'Frank Ocean',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (41,'Girls',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (42,'GOOD Music',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (43,'Grizzly Bear',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (44,'Gwen Stafani',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (45,'Haim',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (46,'Jeff Buckley',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (47,'Jimi Hendrix',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (48,'John Lennon',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (49,'Johnny Cash',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (50,'Kanye West',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (51,'Kanye West & Jay Z',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (52,'Kendrick Lamar',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (53,'Kurt Vile',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (54,'Led Zeppelin',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (55,'Little Dragon',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (56,'Little Joy',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (57,'Local Natives',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (58,'Lou Reed',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (59,'Mac DeMarco',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (60,'Mamas and the Papas',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (61,'Marvin Gaye',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (62,'M.I.A.',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (63,'Michael Jackson',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (64,'Miles Davis',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (65,'Mumford & Sons',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (66,'Neil Young',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (67,'Outkast',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (68,'Panda Bear',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (69,'Paul McCartney & Wings',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (70,'Paul Simon',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (71,'Pink Floyd',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (72,'Portishead',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (73,'Queen',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (74,'Radiohead',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (75,'Robert Plant & Allison Krause',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (76,'Santana',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (77,'Shabbaz Palaces',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (78,'Simon & Garfunkel',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (79,'Stan Getz',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (80,'Shuggie Otis',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (81,'Tame Impala',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (82,'The Beatles',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (84,'The Byrds',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (85,'The Doors',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (86,'The Flaming Lips',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (87,'The Kinks',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (88,'The Rolling Stones',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (89,'The Shins',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (90,'The Strokes',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (91,'The Temptations',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (92,'The War on Drugs',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (93,'The Weeknd',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (94,'The White Stripes',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (95,'The Zombies',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (96,'Theophilus London',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (97,'Tom Yorke',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (98,'Travis Scott',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (99,'Unknown Mortal Orchestra',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (100,'Velvet Underground',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (101,'Vince Staples',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (102,'Vivian Girls',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (103,'Toro Y Moi',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (104,'The Fugees',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (105,'Solange',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (106,'The Roots',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (107,'Daft Punk',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (108,'Maanam',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (109,'Anderson .Paak',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (110,'Khruangbin',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (111,'Spice Girls',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (112,'The Eagles',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (113,'Various Artists',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (114,'Nujabes',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (115,'Black Pumas',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (116,'John Mayer Trio',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (117,'Cardi B',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (118,'Childish Gambino',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (119,'Mac Miller',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (120,'Destiny''s Child',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (121,'Ariana Grande',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (122,'Tyler, The Creator',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (123,'Jefferson Airplane',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (124,'The Internet',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (125,'Audiences',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (126,'Kids See Ghosts',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (127,'EABS',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (128,'Luke Henry',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (129,'Calvin Harris',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (130,'Steve Lacy',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (131,'Blood Orange',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (132,'The O''Mys',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (133,'Third Eye Blind',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (134,'BADBADNOTGOOD',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (135,'Madvillian',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (136,'Franciscan Cleric Choir',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (137,'Thundercat',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (138,'Gorillaz',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (139,'Lauryn Hill',NULL,NULL);

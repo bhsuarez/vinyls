@@ -134,7 +134,7 @@
             about this collection. You can click on each individual vinyl to see details.</p>
            </div>
 
-           <div class="panel collapsed collapse" id="addVinyl">
+           <div class="panel collapsed" id="addVinyl">
            <form class="needs-validation" novalidate>
              <div class="row g-3">
                <div class="col-sm-6">
@@ -179,7 +179,7 @@
                         <th scope="row">{{album.album_id}}</th>
                         <td><a href="/album/{{album.album_id}}">{{album.title}}</a>
                         </td>
-                        <td>{{album.artist_name}}
+                        <td><a href="/artist/{{album.artist_id}}">{{album.artist_name}}
                         </td>
 <!--                        <td>{{album.artist_id}}-->
 <!--                        </td>-->
