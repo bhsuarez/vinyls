@@ -107,7 +107,7 @@ INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barco
 	 (89,'Person Pitch','Panda Bear',68,NULL,''),
 	 (90,'Tomboy','Panda Bear',68,NULL,'');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
-	 (91,'Man on the Run','Paul McCartney & Wings',69,NULL,''),
+	 (91,'Band on the Run','Paul McCartney & Wings',69,NULL,''),
 	 (92,'Hearts and Bones','Paul Simon',70,NULL,''),
 	 (93,'Animals','Pink Floyd',71,NULL,''),
 	 (94,'Dark Side of the Moon','Pink Floyd',71,NULL,''),
@@ -116,21 +116,21 @@ INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barco
 	 (97,'Third','Portishead',72,NULL,''),
 	 (98,'Greatest Hits','Queen',73,NULL,''),
 	 (99,'Amnesiac','Radiohead',74,NULL,''),
-	 (100,'Hail to the Theif','Radiohead',74,NULL,'');
+	 (100,'Hail to the Theif','Radiohead',74,NULL,'724358454314');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
-	 (101,'In Rainbows','Radiohead',74,NULL,''),
+	 (101,'In Rainbows','Radiohead',74,NULL,'880882162313'),
 	 (102,'Kid-A','Radiohead',74,NULL,''),
 	 (103,'King of Limbs','Radiohead',74,NULL,''),
-	 (104,'OK Computer','Radiohead',74,NULL,''),
-	 (105,'Raising Sand','Robert Plant & Allison Krause ',75,NULL,''),
-	 (106,'Greatest Hits','Santana',76,NULL,''),
+	 (104,'OK Computer','Radiohead',74,NULL,'724385522918'),
+	 (105,'Raising Sand','Robert Plant & Allison Krause ',75,NULL,'11661907515'),
+	 (106,'Greatest Hits','Santana',76,NULL,'74643305013'),
 	 (107,'Black Up','Shabbaz Palaces',77,NULL,''),
 	 (108,'Greatest Hits','Simon & Garfunkel',78,NULL,''),
 	 (109,'Stan Getz with Guests artist Laurindo Almeda','Stan Getz',79,NULL,''),
 	 (110,'Inspiration Information','Shuggie Otis',80,NULL,'');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
 	 (111,'Interspeaker','Tame Impala',81,NULL,''),
-	 (112,'Currents','Tame Impala',81,NULL,''),
+	 (112,'Currents','Tame Impala',81,NULL,'602547306777'),
 	 (113,'1962-1966','The Beatles',82,NULL,''),
 	 (114,'1967-1970','The Beatles',82,NULL,''),
 	 (115,'Abbey Road','The Beatles',82,NULL,''),
@@ -152,32 +152,32 @@ INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barco
 	 (130,'Hot Rocks 1964-1971','The Rolling Stones',88,NULL,'');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
 	 (131,'Tattoo You','The Rolling Stones',88,NULL,''),
-	 (132,'Wincing The Night Away','The Shins',89,NULL,''),
+	 (132,'Wincing The Night Away','The Shins',89,NULL,'98787070514'),
 	 (133,'Is This it?','The Strokes',90,NULL,''),
-	 (134,'25th Anniversary','The Temptations',91,NULL,''),
-	 (135,'Lost in the Dream','The War on Drugs',92,NULL,''),
-	 (136,'House of Balloons','The Weeknd',93,NULL,''),
-	 (137,'The White Stripes','The White Stripes',94,NULL,''),
+	 (134,'25th Anniversary','The Temptations',91,NULL,'50109538911'),
+	 (135,'Lost in the Dream','The War on Drugs',92,NULL,'656605031019'),
+	 (136,'House of Balloons','The Weeknd',93,NULL,'602547264756'),
+	 (137,'The White Stripes','The White Stripes',94,NULL,'634904014919'),
 	 (138,'The Best of','The Zombies',95,NULL,''),
-	 (139,'Vibes','Theophilus London',96,NULL,''),
-	 (140,'The Eraser','Tom Yorke',97,NULL,'');
+	 (139,'Vibes','Theophilus London',96,NULL,'93624934653'),
+	 (140,'The Eraser','Tom Yorke',97,NULL,'634904020019');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
-	 (141,'Rodeo','Travis Scott',98,NULL,''),
-	 (142,'II','Unknown Mortal Orchestra',99,NULL,''),
-	 (143,'Multilove','Unknown Mortal Orchestra',99,NULL,''),
-	 (144,'Unknown Mortal Orchestra','Unknown Mortal Orchestra',99,NULL,''),
+	 (141,'Rodeo','Travis Scott',98,NULL,'888750652010'),
+	 (142,'II','Unknown Mortal Orchestra',99,NULL,'656605223216'),
+	 (143,'Multilove','Unknown Mortal Orchestra',99,NULL,'656605226217'),
+	 (144,'Unknown Mortal Orchestra','Unknown Mortal Orchestra',99,NULL,'767981125015'),
 	 (145,'Andy Warhol','Velvet Underground',100,NULL,''),
 	 (146,'Velvet Underground','Velvet Underground',100,NULL,''),
-	 (147,'Summertime 06','Vince Staples',101,NULL,''),
-	 (148,'Everything Goes Wrong','Vivian Girls',102,NULL,''),
-	 (149,'What For?','Toro Y Moi',103,NULL,''),
+	 (147,'Summertime 06','Vince Staples',101,NULL,'602547552167'),
+	 (148,'Everything Goes Wrong','Vivian Girls',102,NULL,'759718517910'),
+	 (149,'What For?','Toro Y Moi',103,NULL,'677517010213'),
 	 (150,'Life of Pablo','Kanye West',50,NULL,'');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
 	 (151,'Blonde','Frank Ocean',40,NULL,''),
 	 (152,'Lemonade','Beyonce',11,NULL,''),
 	 (153,'The Score','The Fugees',104,NULL,''),
-	 (154,'Seat at the Table','Solange',105,NULL,''),
-	 (155,'Game Theory','The Roots',106,NULL,''),
+	 (154,'Seat at the Table','Solange',105,NULL,'889853874712'),
+	 (155,'Game Theory','The Roots',106,NULL,'602517040953'),
 	 (156,'Discover','Daft Punk',107,NULL,''),
 	 (157,'Milosc Jest Cudowna','Maanam',108,NULL,''),
 	 (158,'Oxnard','Anderson .Paak',109,NULL,''),
@@ -185,12 +185,12 @@ INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barco
 	 (160,'Mordechai','Khruangbin',110,NULL,'');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
 	 (161,'Days Before Rodeo','Travis Scott',98,NULL,''),
-	 (162,'Spice World','Spice Girls',111,NULL,''),
+	 (162,'Spice World','Spice Girls',111,NULL,'602508119378'),
 	 (163,'Beyonce','Beyonce',11,NULL,''),
 	 (164,'The Eagles','The Eagles',112,NULL,''),
-	 (165,'Spice Girls','Spice Girls',111,NULL,''),
+	 (165,'Spice Girls','Spice Girls',111,NULL,'17046754415'),
 	 (166,'Old King Cole Younger','Various Artists',113,NULL,''),
-	 (167,'Innerspeaker','Tame Impala',81,NULL,''),
+	 (167,'Innerspeaker','Tame Impala',81,NULL,'879198005728'),
 	 (168,'Malibu','Anderson .Paak',109,NULL,''),
 	 (169,'Metaphorical Music','Nujabes',114,12639854,''),
 	 (170,'Random Access Memories','Daft Punk',107,NULL,'');
@@ -206,37 +206,38 @@ INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barco
 	 (179,'thank u, next','Ariana Grande',121,NULL,''),
 	 (180,'Devine Feminine','Mac Miller',119,NULL,'');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
-	 (181,'Scumfuck Flowerboy','Tyler, The Creator',122,NULL,''),
+	 (181,'Scumfuck Flowerboy','Tyler, The Creator',122,NULL,'889854690519'),
 	 (182,'The Worst of Jefferson Airplane','Jefferson Airplane',123,NULL,''),
 	 (183,'Hive Mind','The Internet',124,12269361,''),
 	 (184,'Roam','Audiences',125,NULL,''),
 	 (185,'Kids See Ghosts','Kids See Ghosts',126,NULL,''),
 	 (186,'Sweetener','Ariana Grande',121,NULL,''),
-	 (187,'Igor','Tyler, The Creator',122,NULL,''),
-	 (188,'Sex & Food','Unknown Mortal Orchestra',99,NULL,''),
+	 (187,'Igor','Tyler, The Creator',122,NULL,'190759652312'),
+	 (188,'Sex & Food','Unknown Mortal Orchestra',99,NULL,'656605232218'),
 	 (189,'Repetitions (Letters to Krzysztof Komeda)','EABS',127,NULL,''),
 	 (190,'American Dreams','Luke Henry',128,NULL,'');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
 	 (191,'Funk Wav Bounces Vol. 1','Calvin Harris',129,NULL,''),
-	 (192,'Apollo 21','Steve Lacy',130,NULL,''),
+	 (192,'Apollo 21','Steve Lacy',130,NULL,'5056167113843'),
 	 (193,'Negro Swan','Blood Orange',131,NULL,''),
 	 (194,'Tomorrow','The O''Mys',132,NULL,''),
-	 (195,'Third Eye Blind','Third Eye Blind',133,NULL,''),
+	 (195,'Third Eye Blind','Third Eye Blind',133,NULL,'8718469536627'),
 	 (196,'IV','BADBADNOTGOOD',134,NULL,''),
 	 (197,'Madvilliany','Madvillian',135,NULL,''),
 	 (198,'Swimming','Mac Miller',119,NULL,''),
 	 (199,'III','BADBADNOTGOOD',134,NULL,''),
 	 (200,'17 Songs for Christmas','Franciscan Cleric Choir',136,NULL,'');
 INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barcode) VALUES
-	 (201,'The Slow Rush','Tame Impala',81,14783822,''),
+	 (201,'The Slow Rush','Tame Impala',81,14783822,'602508460074'),
 	 (202,'It Is What It Is','Thundercat',137,15035550,''),
 	 (203,'Plastic Beach','Gorillaz',138,5813899,''),
 	 (204,'The Lion King: The Gift','Beyonce',11,15885116,''),
 	 (205,'The Miseducation of Lauryn Hill','Lauryn Hill',139,6546645,'888750215710'),
 	 (206, 'After Hours','The Weeknd',93,15968171,''),
 	 (207, 'Good Thing','Leon Bridges',140,NULL,190758399423),
-	 (208, 'Astroworld','Travis Scott',98,NULL,''),
-	 (209, '3.15.20','Childish Gambino',118,16059829,'');
+	 (208, 'Astroworld','Travis Scott',98,NULL,'190758883618'),
+	 (209, '3.15.20','Childish Gambino',118,16059829,''),
+	 (210, 'Californication', 'Red Hot Chili Peppers',141,3971421,93624738619);
 
 	 CREATE TABLE public.artists(
 	    artist_id         INTEGER  NOT NULL PRIMARY KEY
@@ -383,3 +384,5 @@ INSERT INTO public.albums (album_id,title,artist_name,artist_id,discogs_id,barco
 	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (137,'Thundercat',NULL,NULL);
 	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (138,'Gorillaz',NULL,NULL);
 	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (139,'Lauryn Hill',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (140,'Leon Bridges',NULL,NULL);
+	 INSERT INTO public.artists(artist_id,name,discogs_id,photo_url) VALUES (141,'Red Hot Chili Peppers',NULL,NULL);
