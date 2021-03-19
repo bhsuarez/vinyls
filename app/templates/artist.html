@@ -104,6 +104,32 @@
                     {% endfor %}
                 </table>
                 <h2 class="h2">Albums</h2>
+                <table class="table table-striped table-sm">
+                    <thead>
+                    List of albums
+                    <tr>
+                        <th scope="col">Album ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Discogs ID</th>
+<!--                        <th scope="col">Artist ID</th>-->
+<!--                        <th scope="col">Discogs ID</th>-->
+<!--                        <th scope="col">Barcode</th>-->
+                    </tr>
+                    </thead>
+                    {% for album in albums %}
+                    <tr>
+
+                        <td>{{album.album_id}}
+                        </td>
+                        <td><a href="/album/{{album_id}}">{{album.title}}
+                        </td>
+                        <td><a href="https://discogs.com/release/{{album.discogs_id}}">{{album.discogs_id}}</a>
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}
+                  </table>
+
             </div>
         </main>
     </div>
