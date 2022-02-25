@@ -45,7 +45,9 @@ resource "google_compute_firewall" "default" {
  source_ranges = ["0.0.0.0/0"]
 }
 // A variable for extracting the external IP address of the instance
-
-output "project" {
-  value = google_compute_instance.project.0
+output "ip" {
+ value = google_compute_instance.default.network_interface.0.access_config.0.nat_ip
+}
+output "name" {
+  value = "flask-vm-${random_id.instance_id.hex}"
 }
