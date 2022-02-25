@@ -1,7 +1,7 @@
 // Configure the Google Cloud provider
 provider "google" {
  credentials = file("flask-app-342402-2099a9c0dc11.json")
- project     = "test-app-342402"
+ project     = "flask-app-342402"
  region      = "us-west1"
 }
 
@@ -23,7 +23,7 @@ resource "google_compute_instance" "default" {
  }
 
 // Make sure test is installed on all new instances for later steps
- metadata_startup_script = "sudo apt-get update; sudo apt-get install git; sudo apt-get install -yq build-essential python-pip rsync; pip install test; sudo apt-get install postgresql-client;"
+ metadata_startup_script = "sudo apt-get update; sudo apt-get install git; sudo apt-get install -yq build-essential python-pip rsync;"
 
  network_interface {
    network = "default"
@@ -35,7 +35,7 @@ resource "google_compute_instance" "default" {
 
 }
 resource "google_compute_firewall" "default" {
- name    = "test-app-firewall"
+ name    = "flask-app-firewall"
  network = "default"
 
  allow {
