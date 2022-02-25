@@ -1,7 +1,7 @@
 // Configure the Google Cloud provider
 provider "google" {
  credentials = file("flask-app-342402-2099a9c0dc11.json")
- project     = "flask-app-342402"
+ project     = "test-app-342402"
  region      = "us-west1"
 }
 
@@ -12,7 +12,7 @@ resource "random_id" "instance_id" {
 
 // A single Compute Engine instance
 resource "google_compute_instance" "default" {
- name         = "flask-vm-${random_id.instance_id.hex}"
+ name         = "test-vm-${random_id.instance_id.hex}"
  machine_type = "f1-micro"
  zone         = "us-west1-a"
 
@@ -22,8 +22,8 @@ resource "google_compute_instance" "default" {
    }
  }
 
-// Make sure flask is installed on all new instances for later steps
- metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip install flask; sudo apt-get install postgresql-client;"
+// Make sure test is installed on all new instances for later steps
+ metadata_startup_script = "sudo apt-get update; sudo apt-get install git; sudo apt-get install -yq build-essential python-pip rsync; pip install test; sudo apt-get install postgresql-client;"
 
  network_interface {
    network = "default"
@@ -35,7 +35,7 @@ resource "google_compute_instance" "default" {
 
 }
 resource "google_compute_firewall" "default" {
- name    = "flask-app-firewall"
+ name    = "test-app-firewall"
  network = "default"
 
  allow {
@@ -49,5 +49,5 @@ output "ip" {
  value = google_compute_instance.default.network_interface.0.access_config.0.nat_ip
 }
 output "name" {
-  value = "flask-vm-${random_id.instance_id.hex}"
+  value = "test-vm-${random_id.instance_id.hex}"
 }
