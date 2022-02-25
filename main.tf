@@ -51,7 +51,3 @@ output "ip" {
 output "name" {
   value = "flask-vm-${random_id.instance_id.hex}"
 }
-
-module "consul" {
-  source = "github.com/bhsuarez/vinyls"
-}
