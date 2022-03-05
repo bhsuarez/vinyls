@@ -87,9 +87,9 @@
               {% for album in albums %}
                 <table class="table table-striped table-sm">
                     <thead>
-                    {{barcode_results}} Photo goes here
+                    {{barcode_results}}
                     </thead>
-
+                    <img src="{{album.image_url}}" height="400">
                     <tr>
                         <th scope="row">Album ID</th>
                         <td>{{album.album_id}}
@@ -118,6 +118,21 @@
                     <tr>
                         <th scope="row">Barcode</th>
                         <td>{{album.barcode}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Year</th>
+                        <td>{{album.year}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Genres</th>
+                        <td>{{album.genres}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Country</th>
+                        <td>{{album.country}}
                         </td>
                     </tr>
                     {% endfor %}
