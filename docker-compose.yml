@@ -21,7 +21,7 @@ services:
     links:
       - db
     ports:
-      - "80:80"
+      - "5050:5050"
     depends_on:
       db:
         condition: service_healthy

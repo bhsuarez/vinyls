@@ -1,7 +1,10 @@
 # Importing discogs_client from https://github.com/joalla/discogs_client
-from discogs_client import Client
+import os
 
-d = Client('ZorroDiscogClient/0.1', user_token='pKyILjZnXBGRToDMAcXdcGDpPtMTgNyzqRSVBBJO')
+from discogs_client import Client
+from pprint import pprint
+
+d = Client('ZorroDiscogClient/0.1', user_token=os.getenv("discogs_token"))
 
 
 #   General search query
@@ -29,3 +32,7 @@ def searchreleaseid(releaseid):
     print(results.artists)
     print(results.year)
     print(results.country)
+
+
+if __name__ == '__main__':
+    pprint(searchbarcode("602438525447")[0].data)
