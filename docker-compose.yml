@@ -15,3 +15,13 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+  app:
+    build: ./app
+    links:
+      - db
+    ports:
+      - "5050:5050"
+    depends_on:
+      db:
+        condition: service_healthy
