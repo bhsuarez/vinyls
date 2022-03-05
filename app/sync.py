@@ -1,7 +1,8 @@
 import os
 from sqlalchemy.dialects import postgresql
+import discogtool
 from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy import Column, Integer, Date, create_engine, MetaData, select, Table, String, Sequence, update
+from sqlalchemy import Column, Integer, Date, create_engine, MetaData, select, Table, String, Sequence, update, insert
 from sqlalchemy.ext.declarative import declarative_base
 
 #   Creating a base
@@ -28,14 +29,14 @@ def start_session(engine):
 
 
 #   The model for upserting data
-class VinylsModel(Base):
-    __tablename__ = 'vinyls'
+class VinylsAlbumModel(Base):
+    __tablename__ = 'albums'
     album_id = Column(Integer, Sequence('album_id'), primary_key=True)
     title = Column(String)
     artist_name = Column(String)
-    artist_id = (Integer)
-    discogs_id = (Integer)
-    barcode = (String)
+    artist_id = Column(Integer)
+    discogs_id = Column(Integer)
+    barcode = Column(String)
 
     #   Return the data as a string
     def __repr__(self):
@@ -74,7 +75,7 @@ def return_all_albums():
     return results
 
 
-def  return_album_by_artist(artist_id):
+def return_album_by_artist(artist_id):
     """
     Iterate through the db and return a dict of all records by artist_id
     :return:
@@ -94,6 +95,26 @@ def  return_album_by_artist(artist_id):
     return results
 
 
+"""
+    Database accessor functions
+"""
+
+
+def add_album_by_barcode(barcode):
+    album = discogtool.searchbarcode(barcode)[0]
+    #   Start session
+    session = start_session(vinyls_start_engine())
+    table = VinylsAlbumModel.__table__
+    session.execute(insert(table), [{"album_id": 999,
+                         "title": album.data["title"],
+                         "artist_name": album.data["title"],
+                         "artist_id": 0,
+                         "discogs_id": album.data["id"],
+                         "barcode": barcode}
+                        ])
+    session.commit()
+    print("Success upsert commit")
+
+
 if __name__ == '__main__':
-    print(return_all_albums())
-    print(return_album_by_artist(74))
+    add_album_by_barcode("602438525447")
