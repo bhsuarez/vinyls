@@ -8,7 +8,6 @@ COPY requirements.txt /app
 COPY /templates /app/templates
 COPY /static /app/static
 COPY discogtool.py /app
-COPY jukebox.py /app
 COPY app.py /app
 COPY postgresconnector.py /app
 RUN pip install -r requirements.txt
