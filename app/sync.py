@@ -65,7 +65,7 @@ def return_all_albums():
     #   reflect
     metadata.reflect(engine)
     #   create table
-    tbl = Table('sh_employees', metadata)
+    tbl = Table('vinyls', metadata)
     #   Create select statement
     stmt = select([tbl])
 
