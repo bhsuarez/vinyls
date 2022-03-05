@@ -35,4 +35,4 @@ def searchreleaseid(releaseid):
 
 
 if __name__ == '__main__':
-    pprint(searchbarcode("602438525447")[0].__dict__)
+    pprint(searchbarcode("602438525447")[0].data)
