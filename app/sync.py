@@ -128,9 +128,9 @@ def update_album_by_barcode(barcode):
     table = VinylsAlbumModel.__table__
     stmt = (
         update(table).where(table.c.barcode == barcode).values(
-            title=album["title"],
+            title=album["title"].split(' - ')[1],
             discogs_id=album["id"],
-            year=album["year"],
+            year=album.get("year", 0),
             genres=album["genre"],
             image_url=album["cover_image"],
             country=album["country"])
