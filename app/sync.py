@@ -65,7 +65,7 @@ def return_all_albums():
     #   reflect
     metadata.reflect(engine)
     #   create table
-    tbl = Table('vinyls', metadata)
+    tbl = Table('albums', metadata)
     #   Create select statement
     stmt = select([tbl])
 
@@ -74,4 +74,4 @@ def return_all_albums():
 
 
 if __name__ == '__main__':
-    return_all_albums()
+    print(return_all_albums())
