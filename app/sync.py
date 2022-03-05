@@ -1,6 +1,7 @@
 import os
+from sqlalchemy.dialects import postgresql
 from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy import Column, Integer, Date, create_engine, String, Sequence, update
+from sqlalchemy import Column, Integer, Date, create_engine, MetaData, select, Table, String, Sequence, update
 from sqlalchemy.ext.declarative import declarative_base
 
 #   Creating a base
@@ -28,7 +29,7 @@ def start_session(engine):
 
 #   The model for upserting data
 class VinylsModel(Base):
-    __table__name = 'vinyls'
+    __tablename__ = 'vinyls'
     album_id = Column(Integer, Sequence('album_id'), primary_key=True)
     title = Column(String)
     artist_name = Column(String)
@@ -41,9 +42,36 @@ class VinylsModel(Base):
         return str([getattr(self, c.name, None) for c in self.__table__.c])
 
 
-def get_all_albums():
-    print(db.execute("SELECT * FROM public.albums "))
+#   Creating a compiler object from a specified query
+def compile_query(query):
+    compiler = query.compile if not hasattr(query, 'statement') else query.statement.compile
+    return compiler(dialect=postgresql.dialect())
+
+
+"""
+    Accessor functions for albums table
+"""
+
+
+#   Returns a dict of all employees
+def return_all_albums():
+    """
+        Iterate through the db and return a dict of all records
+    """
+    #   Create a MetaData() object
+    metadata = MetaData()
+    #   create engine
+    engine = vinyls_start_engine()
+    #   reflect
+    metadata.reflect(engine)
+    #   create table
+    tbl = Table('sh_employees', metadata)
+    #   Create select statement
+    stmt = select([tbl])
+
+    results = engine.connect().execute(stmt).fetchall()
+    return results
 
 
 if __name__ == '__main__':
-    get_all_albums()
+    return_all_albums()
