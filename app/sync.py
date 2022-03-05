@@ -41,7 +41,7 @@ class VinylsAlbumModel(Base):
     image_url = Column(String)
     year = Column(Integer)
     country = Column(String)
-    genre = Column(String)
+    genres = Column(String)
 
     #   Return the data as a string
     def __repr__(self):
@@ -131,7 +131,7 @@ def update_album_by_barcode(barcode):
             title=album["title"],
             discogs_id=album["id"],
             year=album["year"],
-            genre=album["genre"],
+            genres=album["genre"],
             image_url=album["cover_image"],
             country=album["country"])
     )
