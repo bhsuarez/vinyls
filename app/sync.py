@@ -57,6 +57,7 @@ def compile_query(query):
 def return_all_albums():
     """
         Iterate through the db and return a dict of all records
+        :return results of the query
     """
     #   Create a MetaData() object
     metadata = MetaData()
@@ -68,10 +69,31 @@ def return_all_albums():
     tbl = Table('albums', metadata)
     #   Create select statement
     stmt = select([tbl])
-
+    #   Get results
     results = engine.connect().execute(stmt).fetchall()
+    return results
+
+
+def  return_album_by_artist(artist_id):
+    """
+    Iterate through the db and return a dict of all records by artist_id
+    :return:
+    """
+    #   Create a MetaData() object
+    metadata = MetaData()
+    #   create engine
+    engine = vinyls_start_engine()
+    #   reflect
+    metadata.reflect(engine)
+    #   create table
+    tbl = Table('albums', metadata)
+    #   Create select statement
+    stmt = select([tbl])
+    #   Get results
+    results = engine.connect().execute(stmt.where(tbl.c.artist_id == artist_id)).fetchall()
     return results
 
 
 if __name__ == '__main__':
     print(return_all_albums())
+    print(return_album_by_artist(74))
