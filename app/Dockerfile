@@ -9,7 +9,7 @@ COPY /templates /app/templates
 COPY /static /app/static
 COPY discogtool.py /app
 COPY app.py /app
-COPY postgresconnector.py /app
+COPY sync.py /app
 RUN pip install -r requirements.txt
 
 CMD python app.py
