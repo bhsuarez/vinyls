@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from sqlalchemy import create_engine
+from sync import add_album_by_barcode
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 engine = create_engine("postgresql://root:root@db:5432/vinyls")
@@ -36,6 +37,16 @@ def artist_view(artist_id):
 def discog_list():
     albums = db.execute("SELECT * FROM public.albums ")
     return render_template("discogs.html", albums=albums)
+
+
+"""
+example http://0.0.0.0:5050/album/add/074643811217
+adds thriller by michael jackson
+"""
+@app.route('/album/add/<string:barcode>', methods=['GET'])
+def add_album(barcode):
+    add_album_by_barcode(barcode)
+    return render_template("add-vinyl.html")
 
 
 if __name__ == '__main__':
