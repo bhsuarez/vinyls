@@ -1,6 +1,7 @@
 import os
 from sqlalchemy.dialects import postgresql
 import discogtool
+import time
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, create_engine, MetaData, select, Table, String, Sequence, update, insert
 from sqlalchemy.ext.declarative import declarative_base
@@ -145,8 +146,8 @@ def update_album_by_barcode(barcode):
 
 
 
-#if __name__ == '__main__':
-    # for album in return_all_albums():
-    #     if album.barcode != "":
-    #         update_album_by_barcode(album.barcode)
-    #         time.sleep(2)
+if __name__ == '__main__':
+    for album in return_all_albums():
+        if album.barcode != "":
+            update_album_by_barcode(album.barcode)
+            time.sleep(2)
