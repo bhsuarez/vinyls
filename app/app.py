@@ -45,12 +45,14 @@ adds thriller by michael jackson
 """
 
 
-@app.route('/add', methods=['GET', 'POST'])
-def add_vinyl():
+@app.route('/addvinyl', methods=['GET', 'POST'])
+def addvinyl():
     if request.method == 'GET':
         return render_template("add-vinyl.html")
     elif request.method == 'POST':
-        return 'A POST request was made'
+        form_data = request.form
+        #add_album_by_barcode(request.form['addvinyl'])
+        return render_template("add-vinyl.html", form_data=form_data)
 
 
 if __name__ == '__main__':
