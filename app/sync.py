@@ -1,7 +1,6 @@
 import os
 from sqlalchemy.dialects import postgresql
 import discogtool
-import time
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, create_engine, MetaData, select, Table, String, Sequence, update, insert
 from sqlalchemy.ext.declarative import declarative_base
@@ -111,13 +110,18 @@ def add_album_by_barcode(barcode):
     #   Start session
     session = start_session(vinyls_start_engine())
     table = VinylsAlbumModel.__table__
-    session.execute(insert(table), [{"album_id": 999,
+    session.execute(insert(table), [{
+        #"album_id": 999,
                          "title": album.data["title"],
                          "artist_name": album.data["title"],
-                         "artist_id": "added by barcode",
+                         "artist_id": 0,
                          "discogs_id": album.data["id"],
-                         "barcode": barcode}
-                        ])
+                         "barcode": barcode,
+                         "country": album.data["country"],
+                         "image_url": album.data["cover_image"],
+                         "genres": album.data["genre"],
+                         "year": album.data["year"]
+                                     }])
     session.commit()
     print("Success upsert commit")
 
@@ -140,8 +144,9 @@ def update_album_by_barcode(barcode):
     print(f"Updated {album['title']}")
 
 
-if __name__ == '__main__':
-    for album in return_all_albums():
-        if album.barcode != "":
-            update_album_by_barcode(album.barcode)
-            time.sleep(2)
+
+#if __name__ == '__main__':
+    # for album in return_all_albums():
+    #     if album.barcode != "":
+    #         update_album_by_barcode(album.barcode)
+    #         time.sleep(2)
