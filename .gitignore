@@ -7,3 +7,4 @@ discogs_client/
 __pycache__/
 credsz.py
 *.json
+.env
