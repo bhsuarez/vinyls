@@ -82,7 +82,16 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            Text can go here
+            Add album
+            <form>
+                  <div class="form-group">
+                    <label for="fileAttachment">Add vinyl</label>
+                      <input type="text" class="form-control" id="formText">
+                    <input type="file" class="form-control-file" id="fileAttachment">
+                      <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                  </div>
+
+                </form>
             <div class="table-responsive">
               {% for album in albums %}
                 <table class="table table-striped table-sm">

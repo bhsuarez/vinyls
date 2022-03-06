@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from sqlalchemy import create_engine
 from sync import add_album_by_barcode
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -43,10 +43,14 @@ def discog_list():
 example http://0.0.0.0:5050/album/add/074643811217
 adds thriller by michael jackson
 """
-@app.route('/album/add/<string:barcode>', methods=['GET'])
-def add_album(barcode):
-    add_album_by_barcode(barcode)
-    return render_template("add-vinyl.html")
+
+
+@app.route('/add', methods=['GET', 'POST'])
+def add_vinyl():
+    if request.method == 'GET':
+        return render_template("add-vinyl.html")
+    elif request.method == 'POST':
+        return 'A POST request was made'
 
 
 if __name__ == '__main__':
