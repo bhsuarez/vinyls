@@ -33,22 +33,19 @@ def artist_view(artist_id):
     return render_template("artist.html", artists=artists,albums=albums)
 
 
-@app.route('/discogs', methods=['GET'])
-def discog_list():
-    albums = db.execute("SELECT * FROM public.albums ")
-    return render_template("discogs.html", albums=albums)
-
+@app.route('/vinyls', methods=['GET'])
+def vinyls():
+    return render_template("add-vinyl.html")
 
 """
-example http://0.0.0.0:5050/album/add/074643811217
-adds thriller by michael jackson
-"""
 
+https://www.askpython.com/python-modules/flask/flask-forms
+"""
 
 @app.route('/addvinyl', methods=['GET', 'POST'])
 def addvinyl():
     if request.method == 'GET':
-        return render_template("add-vinyl.html")
+        return f"The URL /addvinyl is accessed directly. Try going to /vinyls to submit form"
     elif request.method == 'POST':
         form_data = request.form
         #add_album_by_barcode(request.form['addvinyl'])
