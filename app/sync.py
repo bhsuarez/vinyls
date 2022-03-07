@@ -112,7 +112,7 @@ def add_album_by_barcode(barcode):
     session = start_session(vinyls_start_engine())
     table = VinylsAlbumModel.__table__
     session.execute(insert(table), [{
-        #"album_id": 999,
+                         "album_id": 999, #needs to be change to auto-increment
                          "title": album.data["title"],
                          "artist_name": album.data["title"],
                          "artist_id": 0,
