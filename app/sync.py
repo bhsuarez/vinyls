@@ -114,7 +114,7 @@ def add_album_by_barcode(barcode):
     session.execute(insert(table), [{
                          "album_id": 999, #needs to be change to auto-increment
                          "title": album.data["title"].split(' - ')[1],
-                         "artist_name": album.data["title"],
+                         "artist_name": album.data["title"].split(' - ')[0],
                          "artist_id": 0,
                          "discogs_id": album.data["id"],
                          "barcode": barcode,
@@ -144,9 +144,8 @@ def update_album_by_barcode(barcode):
     session.commit()
     print(f"Updated {album['title']}")
 
-
-
-if __name__ == '__main__':
+#   This will loop the database and update the album based on barcode
+def update_from_discogs():
     for album in return_all_albums():
         if album.barcode != "":
             update_album_by_barcode(album.barcode)
