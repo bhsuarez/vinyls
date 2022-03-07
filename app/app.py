@@ -48,7 +48,7 @@ def addvinyl():
         return f"The URL /addvinyl is accessed directly. Try going to /vinyls to submit form"
     elif request.method == 'POST':
         form_data = request.form
-        #add_album_by_barcode(request.form['addvinyl'])
+        add_album_by_barcode(form_data.get("barcode"))
         return render_template("add-vinyl.html", form_data=form_data)
 
 
