@@ -67,7 +67,7 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            Add album
+                Add album
             <form action="addvinyl" method="post">
                   <div class="form-group">
                     <label for="formText">Enter barcode</label>
@@ -75,7 +75,6 @@
                     <input type="submit" class="btn btn-primary mb-3">Submit</input>
                   </div>
             </form>
-            {{form_data}}
             <div class="table-responsive">
               {% for album in albums %}
                 <table class="table table-striped table-sm">
