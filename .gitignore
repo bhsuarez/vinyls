@@ -9,3 +9,4 @@ credsz.py
 *.json
 *.env
 app/barcode_result.txt
+app/barcode_result.txt
