@@ -105,6 +105,7 @@ def return_albums_by_artist(artist_id):
     Database accessor functions
 """
 
+
 #   Add an album by barcode, using data from the Discogs API
 def add_album_by_barcode(barcode):
     album = discogtool.searchbarcode(barcode)[0]
@@ -126,6 +127,7 @@ def add_album_by_barcode(barcode):
     session.commit()
     print("Success upsert commit")
 
+
 #   Updates album data using barcode in the Discogs API
 def update_album_by_barcode(barcode):
     album = discogtool.searchbarcode(barcode)[0].data
@@ -143,6 +145,7 @@ def update_album_by_barcode(barcode):
     session.execute(stmt)
     session.commit()
     print(f"Updated {album['title']}")
+
 
 #   This will loop the database and update the album based on barcode
 def update_from_discogs():
