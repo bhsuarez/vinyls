@@ -8,3 +8,4 @@ __pycache__/
 credsz.py
 *.json
 *.env
+app/barcode_result.txt
