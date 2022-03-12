@@ -1,5 +1,9 @@
 FROM python:3.6
 
+RUN apt-get update -yq && apt-get install -yq nodejs \
+    && apt-get install -yq npm \
+    && npm install quagga
+
 EXPOSE 5432
 
 WORKDIR /app
