@@ -8,8 +8,6 @@ engine = create_engine("postgresql://root:root@db:5432/vinyls")
 db = scoped_session(sessionmaker(bind=engine))
 
 # create ssl cert
-ctx = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
-ctx.load_cert_chain('full-chain.crt', 'priv.key')
 app = Flask(__name__, static_folder='/app/static')
 
 app.secret_key = '12345678' # this key is used to communicate with database.
@@ -57,4 +55,4 @@ def addvinyl():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, ssl_context='ctx')
+    app.run(host='0.0.0.0', port=8080, ssl_context=('domain.cert.pem', 'private.key.pem'))
