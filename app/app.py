@@ -1,11 +1,15 @@
 from flask import Flask, render_template, request
 from sqlalchemy import create_engine
 from sync import add_album_by_barcode
+import ssl
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 engine = create_engine("postgresql://root:root@db:5432/vinyls")
 db = scoped_session(sessionmaker(bind=engine))
 
+# create ssl cert
+ctx = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
+ctx.load_cert_chain('', '')
 app = Flask(__name__, static_folder='/app/static')
 
 app.secret_key = '12345678' # this key is used to communicate with database.
