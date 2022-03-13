@@ -55,4 +55,4 @@ def addvinyl():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, ssl_context=('domain.cert.pem', 'private.key.pem'))
+    app.run(host='0.0.0.0', port=8080, ssl_context=('./domain.cert.pem', './private.key.pem'))

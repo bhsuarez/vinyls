@@ -8,6 +8,8 @@ COPY requirements.txt /app
 COPY /templates /app/templates
 COPY /static /app/static
 COPY discogtool.py /app
+COPY domain.cert.pem /app
+COPY private.key.pem /app
 COPY app.py /app
 COPY sync.py /app
 RUN pip install -r requirements.txt
