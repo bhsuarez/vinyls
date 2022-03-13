@@ -12,3 +12,4 @@ app/barcode_result.txt
 app/barcode_result.txt
 *.key
 *.crt
+*.pem
