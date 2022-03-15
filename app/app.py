@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from sqlalchemy import create_engine
+from telegram_worker import send_telegram_message
 from sync import add_album_by_barcode
-import ssl
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 engine = create_engine("postgresql://root:root@db:5432/vinyls")
@@ -10,7 +10,7 @@ db = scoped_session(sessionmaker(bind=engine))
 # create ssl cert
 app = Flask(__name__, static_folder='/app/static')
 
-app.secret_key = '12345678' # this key is used to communicate with database.
+app.secret_key = '12345678'  # this key is used to communicate with database.
 #   Configure session to use filesystem
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
@@ -19,30 +19,37 @@ app.config["SESSION_TYPE"] = "filesystem"
 @app.route('/')
 def index():
     albums = db.execute("SELECT * FROM public.albums ")
+
     return render_template('index.html', albums=albums)
+
+
+def get_ip():
+    return jsonify({'ip': request.remote_addr}), 200
 
 
 @app.route('/album/<album_id>', methods=['GET'])
 def album_view(album_id):
-    albums = db.execute("SELECT * FROM public.albums WHERE album_id = "+album_id)
+    albums = db.execute("SELECT * FROM public.albums WHERE album_id = " + album_id)
     return render_template("album.html", albums=albums)
 
 
 @app.route('/artist/<artist_id>', methods=['GET'])
 def artist_view(artist_id):
-    artists = db.execute("SELECT * FROM public.artists WHERE artist_id = "+artist_id)
-    albums = db.execute("SELECT * FROM public.albums WHERE artist_id = "+artist_id)
-    return render_template("artist.html", artists=artists,albums=albums)
+    artists = db.execute("SELECT * FROM public.artists WHERE artist_id = " + artist_id)
+    albums = db.execute("SELECT * FROM public.albums WHERE artist_id = " + artist_id)
+    return render_template("artist.html", artists=artists, albums=albums)
 
 
 @app.route('/vinyls', methods=['GET'])
 def vinyls():
     return render_template("add-vinyl.html")
 
+
 """
 
 https://www.askpython.com/python-modules/flask/flask-forms
 """
+
 
 @app.route('/addvinyl', methods=['GET', 'POST'])
 def addvinyl():
