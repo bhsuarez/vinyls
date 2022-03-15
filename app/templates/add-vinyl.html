@@ -75,12 +75,14 @@
                     <input type="text" class="form-control" id="formText" name="barcode">
                     <input type="submit" class="btn btn-primary mb-3">
                   </div>
+                <div></div>
             </form>
             <div class="controls">
             <fieldset class="input-group">
                 <button class="stop">Stop</button>
+                <button class="start">Start</button>
             </fieldset>
-            <fieldset class="reader-config-group">
+            <!-- <fieldset class="reader-config-group">
                 <label>
                     <span>Barcode-Type</span>
                     <select name="decoder_readers">
@@ -146,7 +148,7 @@
                     <span>Torch</span>
                     <input type="checkbox" name="settings_torch" />
                 </label>
-            </fieldset>
+            </fieldset> -->
         </div>
       <div id="result_strip">
         <ul class="thumbnails"></ul>
@@ -211,6 +213,12 @@
         </main>
     </div>
 </div>
+<script>
+    Quagga.onDetected(function(result) {
+    var code = result.codeResult.code;
+    document.getElementById('barcode').value = code;
+});
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
