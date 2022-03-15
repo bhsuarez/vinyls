@@ -18,13 +18,12 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 @app.route('/')
 def index():
+    if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+        send_telegram_message(request.environ['REMOTE_ADDR'])
+    else:
+        send_telegram_message(request.environ['HTTP_X_FORWARDED_FOR'])
     albums = db.execute("SELECT * FROM public.albums ")
-
     return render_template('index.html', albums=albums)
-
-
-def get_ip():
-    return jsonify({'ip': request.remote_addr}), 200
 
 
 @app.route('/album/<album_id>', methods=['GET'])
