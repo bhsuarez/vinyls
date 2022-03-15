@@ -7,6 +7,7 @@ WORKDIR /app
 COPY requirements.txt /app
 COPY /templates /app/templates
 COPY /static /app/static
+COPY telegram_worker.py /app
 COPY discogtool.py /app
 COPY domain.cert.pem /app
 COPY private.key.pem /app
