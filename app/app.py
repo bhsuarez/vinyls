@@ -18,10 +18,6 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 @app.route('/')
 def index():
-    if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
-        send_telegram_message(request.environ['REMOTE_ADDR'])
-    else:
-        send_telegram_message(request.environ['HTTP_X_FORWARDED_FOR'])
     albums = db.execute("SELECT * FROM public.albums ")
     return render_template('index.html', albums=albums)
 
@@ -57,6 +53,13 @@ def addvinyl():
     elif request.method == 'POST':
         form_data = request.form
         add_album_by_barcode(form_data.get("barcode"))
+        #   Send the IP address and barcode data to the telegram bot
+        if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+            send_telegram_message(request.environ['REMOTE_ADDR'],
+                                  form_data.get("barcode"))
+        else:
+            send_telegram_message(request.environ['HTTP_X_FORWARDED_FOR'],
+                                  form_data.get("barcode"))
         return render_template("add-vinyl.html", form_data=form_data)
 
 
