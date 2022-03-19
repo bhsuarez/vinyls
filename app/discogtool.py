@@ -4,8 +4,8 @@ import os
 from discogs_client import Client
 from pprint import pprint
 
-d = Client('ZorroDiscogClient/0.1', user_token=os.getenv("discogs_token"))
-
+d = Client('ZorroDiscogClient/0.1',
+           user_token=os.getenv("discogs_user_token"))
 
 #   General search query
 def search(query):
