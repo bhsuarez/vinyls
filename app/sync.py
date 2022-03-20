@@ -59,6 +59,23 @@ def compile_query(query):
 """
 
 
+#   Returns number of rows in the table
+def return_number_of_albums():
+    #   Create a MetaData() object
+    metadata = MetaData()
+    #   create engine
+    engine = vinyls_start_engine()
+    #   reflect
+    metadata.reflect(engine)
+    #   create table
+    tbl = Table('albums', metadata)
+    #   Create select statement
+    stmt = select([tbl])
+    #   Get results
+    results = engine.connect().execute(stmt).rowcount
+    return results
+
+
 #   Returns a dict of all employees
 def return_all_albums():
     """
@@ -112,8 +129,9 @@ def add_album_by_barcode(barcode):
     #   Start session
     session = start_session(vinyls_start_engine())
     table = VinylsAlbumModel.__table__
+    rows = return_number_of_albums()
     session.execute(insert(table), [{
-                         "album_id": 999, #needs to be change to auto-increment
+                         "album_id": rows+1,
                          "title": album.data["title"].split(' - ')[1],
                          "artist_name": album.data["title"].split(' - ')[0],
                          "artist_id": 0,
