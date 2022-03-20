@@ -60,7 +60,8 @@ def addvinyl():
         else:
             send_telegram_message(request.environ['HTTP_X_FORWARDED_FOR'],
                                   form_data.get("barcode"))
-        return render_template("add-vinyl.html", form_data=form_data)
+        album = db.execute("SELECT * FROM public.albums WHERE barcode = '" + form_data.get("barcode")+"'")
+        return render_template("album.html", albums=album)
 
 
 if __name__ == '__main__':
