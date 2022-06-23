@@ -13,3 +13,4 @@ app/barcode_result.txt
 *.key
 *.crt
 *.pem
+/db/fly-db.md
