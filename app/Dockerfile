@@ -1,13 +1,13 @@
 FROM python:3.6
 
-EXPOSE 5432
+EXPOSE 8080
 
 WORKDIR /app
 
 COPY requirements.txt /app
 COPY /templates /app/templates
 COPY /static /app/static
-COPY telegram_worker.py /app
+#COPY telegram_worker.py /app
 COPY discogtool.py /app
 COPY domain.cert.pem /app
 COPY private.key.pem /app

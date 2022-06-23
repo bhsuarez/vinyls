@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 from sqlalchemy import create_engine
-from telegram_worker import send_telegram_message
+#from telegram_worker import send_telegram_message
 from sync import add_album_by_barcode
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-engine = create_engine("postgresql://root:root@db:5432/vinyls")
+engine = create_engine("postgresql://postgres:93bfe619ebbc6eb67e4d1fea3255d1dc952fa2ff65e28c57@localhost:5432/postgres")
 db = scoped_session(sessionmaker(bind=engine))
 
 # create ssl cert
@@ -54,12 +54,12 @@ def addvinyl():
         form_data = request.form
         add_album_by_barcode(form_data.get("barcode"))
         #   Send the IP address and barcode data to the telegram bot
-        if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
-            send_telegram_message(request.environ['REMOTE_ADDR'],
-                                  form_data.get("barcode"))
-        else:
-            send_telegram_message(request.environ['HTTP_X_FORWARDED_FOR'],
-                                  form_data.get("barcode"))
+        # if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+        #    send_telegram_message(request.environ['REMOTE_ADDR'],
+        #                          form_data.get("barcode"))
+        # else:
+        #    send_telegram_message(request.environ['HTTP_X_FORWARDED_FOR'],
+        #                          form_data.get("barcode"))
         album = db.execute("SELECT * FROM public.albums WHERE barcode = '" + form_data.get("barcode")+"'")
         return render_template("album.html", albums=album)
 
